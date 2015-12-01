@@ -1,0 +1,47 @@
+import React from 'react';
+
+class AudioPlayer extends React.Component {
+    render() {
+        return (
+            <div>
+            <div id="audio-player" className="jp-player"></div>
+            <div id="playbar-container" className="jp-audio playbar" role="application" aria-label="media player">
+                <div className="jp-type-single">
+                    <div className="jp-gui jp-interface">
+                        <div className="jp-controls-holder">
+                            <div className="jp-controls">
+                                <button className="jp-play" role="button" tabindex="0"></button>
+                                <button className="jp-stop" role="button" tabindex="0"></button>
+                            </div>
+                            <div className="jp-current-time" role="timer" aria-label="time">&nbsp;</div>
+                            <div className="jp-progress">
+                                <div className="jp-seek-bar">
+                                    <div className="jp-play-bar">
+                                        <div className="jp-play-button"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="jp-duration" role="timer" aria-label="duration">&nbsp;</div>
+                            <div className="jp-toggles" style={{display: 'none'}}>
+                                <button className="jp-repeat" role="button" tabindex="0">repeat</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="jp-details">
+                        <div className="jp-title" aria-label="title">&nbsp;</div>
+                    </div>
+                    <div className="jp-no-solution">
+                        <span>Update Required</span>
+                        To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+                    </div>
+                </div>
+                <div className="playbar-shadow">
+                    <h2>
+                        You need to pay the artist or pin the file/album in order to play this track !
+                    </h2>
+                </div>
+            </div>
+            </div>
+        )
+    }
+}

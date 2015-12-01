@@ -1,0 +1,98 @@
+.container {
+    max-height: 0px;
+    overflow: hidden;
+    padding: 0px 10px;
+	display: -webkit-flex;
+    display: flex;
+	-webkit-flex-direction: column;
+    flex-direction: column;
+    margin: 0px auto;
+    background-color: lightcyan;
+}
+
+.container.active {
+    max-height: 100%;
+    padding: 25px;
+    margin: 20px;
+}
+
+.paybox {
+	display: -webkit-flex;
+    display: flex;
+    text-align: center;
+}
+
+.paybox input {
+    width: 40%;
+    padding: 10px;
+}
+
+.suggest {
+    display: inline-block;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0px auto;
+}
+
+.btc-price-input {
+    display: inline-block;
+}
+
+.payinfo,
+.qrcode {
+	-webkit-flex: 1;
+    flex: 1;
+    margin: 0px 5px;
+}
+
+.payinfo {
+	display: -webkit-flex;
+    display: flex;
+	-webkit-justify-content: space-around;
+    justify-content: space-around;
+	-webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+.list {
+	display: -webkit-flex;
+    display: flex;
+    margin: 0;
+    padding: 0;
+	-webkit-justify-content: space-around;
+    justify-content: space-around;
+}
+
+.item {
+	display: -webkit-flex;
+    display: flex;
+	-webkit-flex-direction: column;
+    flex-direction: column;
+    list-style: none;
+	-webkit-flex: auto 0;
+    flex: auto 0;
+}
+
+.item img {
+    border-radius: 100%;
+    height: 60px;
+    width: 60px;;
+    margin: auto;
+}
+
+.item img:hover {
+    background-color: lightblue;
+}
+
+.item.active img {
+    background-color: lightcyan;
+}
+
+.item.active:before {
+    border: 20px solid;
+    border-color: lightcyan transparent transparent transparent;
+    margin: -20px 30px;
+    position: relative;
+    content: ""
+}

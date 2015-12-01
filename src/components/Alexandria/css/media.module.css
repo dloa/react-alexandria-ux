@@ -1,0 +1,42 @@
+.hidden {
+    display: none;
+}
+.container {
+    width: 60%;
+    margin: 0px auto;
+}
+
+.top {
+    display: -webkit-flex;
+    display: flex;
+}
+
+.bottom {
+    width: 100%;
+}
+
+.tipbox {
+    float: right;
+    padding: 0 20px;
+}
+
+.tipbox .tip {
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.tipbox .share {
+    cursor: pointer;
+}
+
+.media-meta .artist {
+    color: grey;
+}
+
+.media-info .media-meta {
+    position: relative;
+    top: -15px;
+}
+

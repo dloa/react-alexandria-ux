@@ -1,0 +1,34 @@
+.main {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+}
+
+.media-info,
+.cover {
+    -webkit-flex: 1;
+    flex: 1;
+}
+
+.cover img {
+    width: 100%;
+    height: 100%;
+}
+
+.media-cover img {
+    border-radius: 5px;
+}
+
+h1,
+h2,
+h3 {
+    text-align: left;
+}
+
+.meta {
+    position: relative;
+    top: -15px;
+}

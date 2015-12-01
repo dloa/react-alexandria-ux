@@ -1,0 +1,86 @@
+.main {
+    padding: 25px 0;
+}
+
+.table {
+    width: 100%;
+}
+
+.table td,
+.table th {
+    text-align: left;
+    padding: 0 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.table tr {
+    cursor: pointer;
+}
+
+.tracks tr:nth-child(odd) {
+    background-color: rgba(230, 230, 230, 0.8) ;
+}
+
+.tracks tr:hover {
+    background-color: rgba(210, 210, 210, 0.8);
+}
+
+.tracks tr.selected {
+    background-color: rgba(190, 190, 210, 0.8);
+}
+
+.tracks tr.selected td:first-child:before {
+    content: '';
+    border: 10px solid;
+    border-color: transparent transparent transparent grey;
+    position: absolute;
+    margin: 0px 0px 0px -20px;
+}
+
+
+.table thead {
+    color: #a5a5a5;
+    border-width: 2px;
+    line-height: 25px;
+    cursor: default;
+    border-color: #cccbcb;
+    border-bottom-style: solid;
+    border-top-style: solid;
+    margin-bottom: 5px;
+}
+
+.table th:first-child + th + th + th + th,
+/* fifth column: Price/Play */
+
+.table th:first-child + th + th + th + th + th {
+    /* sixth column: Price/Buy */
+    text-align: center;
+}
+
+.table td:first-child {
+    /* first column: # */
+}
+
+.table td:first-child + td {
+    /* second column: Name */
+    width: 60%;
+}
+
+.table td:first-child + td + td {
+    /* third column: Artist */
+    width: 60%;
+}
+
+.table td:first-child + td + td + td {
+    /* forth column: Time */
+}
+
+.table span.price
+/* fifth column: Price/Play */
+{
+    padding: 0 20px;
+    border-radius: 4px;
+    background: lightgrey;
+    font-weight: bold;
+}
