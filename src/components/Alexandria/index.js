@@ -55,7 +55,7 @@ export default class Component extends React.Component {
     render() {
         //console.log (this.props, this.state)
         return (
-            <AltContainer stores={{store: Store}} actions={{actions: Actions}}>
+            <AltContainer stores={{state: Store}} actions={{actions: Actions}}>
                 <Alexandria {...this.state}/>
             </AltContainer>
         )
@@ -64,8 +64,7 @@ export default class Component extends React.Component {
 
 export class Alexandria extends React.Component {
     render() {
-        let state = this.props.store;
-        let actions = this.props.actions;
+        let {state, actions} = this.props;
         let xinfo = this.props['extra-info'];
         console.log (this.props, this.state)
         return (
