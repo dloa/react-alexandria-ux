@@ -21,7 +21,7 @@ export default class InfoBox extends React.Component {
     render() {
         let xinfo = this.props['extra-info'];
 
-        let {title, price, ...other} = this.props;
+        let {title, price, PWYWActions, ...other} = this.props;
         let {artist} = xinfo;
 
         return (
@@ -29,7 +29,7 @@ export default class InfoBox extends React.Component {
                 <MediaInfo title={title} artist={artist}/>
                 <FormatSelector options={xinfo.formats} />
                 <ReleaseInfo />
-                <BuyBox price={price} {...other}/> 
+                <BuyBox price={price} actions={PWYWActions} {...other}/>
                 <PlayBarShadow />
             </div>
         )

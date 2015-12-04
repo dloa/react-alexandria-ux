@@ -12,10 +12,11 @@ import testData from './tests/data.json';
 
 import alt from './alt';
 
-const Actions = alt.generateActions('showPWYW', 'hidePWYW');
+const PWYWActions = alt.generateActions('showPWYW', 'hidePWYW');
+
 class StoreModel {
     constructor() {
-        this.bindActions(Actions);
+        this.bindActions(PWYWActions);
 
         this.PWYW = {
             shown: false,
@@ -55,7 +56,7 @@ export default class Component extends React.Component {
     render() {
         //console.log (this.props, this.state)
         return (
-            <AltContainer stores={{state: Store}} actions={{actions: Actions}}>
+            <AltContainer stores={{state: Store}} actions={{PWYWActions: PWYWActions}}>
                 <Alexandria {...this.state}/>
             </AltContainer>
         )
@@ -64,13 +65,13 @@ export default class Component extends React.Component {
 
 export class Alexandria extends React.Component {
     render() {
-        let {state, actions} = this.props;
+        let {state, PWYWActions} = this.props;
         let xinfo = this.props['extra-info'];
 
         return (
             <div className={styles.main}>
                 {state.PWYW.shown?
-                 <PWYW {...state.PWYW} actions={actions} />:null
+                 <PWYW {...state.PWYW} actions={PWYWActions} />:null
                 }
                 <div className={styles.container}>
                     <div className={styles.top}>
