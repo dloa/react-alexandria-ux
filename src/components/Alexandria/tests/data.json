@@ -1,0 +1,58 @@
+{
+    "media-data": {
+        "alexandria-media": {
+            "publisher": "FLY7WJBQJHNcWBqZKUSY45VePpSZ8HtBTD",
+            "timestamp": 1445935671000,
+            "type": "music",
+            "info": {
+                "title": "On the Verge and In the Moment",
+                "description": "On the Verge and In the Moment by the Biddy Bums",
+                "year": 2005,
+                "extra-info": {
+                    "schemaVersion": "2",
+                    "btcAddress": "1N2EWefmiE4EkyVHmeek12TyjzyYRT7L9",
+                    "primaryHash": "Qmeke1CyonqgKErvGhE18WLBuhrLaScbpSAS6vGLuoSCXM",
+                    "artist": "The Biddy Bums",
+                    "company": "Hot Bone Records",
+                    "coverArt": "album-art.jpg",
+                    "formats": ["mp3", "flac"],
+                    "elements": [{
+                        "title": "DJ Day",
+                        "fileName": "DJ Day",
+                        "runtime": 206,
+                        "pricing": [6,10,700,990]
+                    }, {
+                        "title": "I Digress",
+                        "fileName": "I Digress",
+                        "runtime": 174,
+                        "pricing": [6,10,700,990]
+                    },{
+                        "title": "Snow White",
+                        "fileName": "Snow White",
+                        "runtime": 338,
+                        "pricing": [6,10,700,990]
+                    }],
+                    "stats": {
+                        "pinners": {
+                            "discAmount": "50",
+                            "discThresh": "1000",
+                            "free": "500"
+                        },
+                        "promoters": "10"
+                    },
+                    "tags": "Mycelia"
+                }
+            },
+            "payment": {
+                "type": "tip",
+                "currency": "USD",
+                "suggTip": "1,11,51"
+            },
+            "extras": ""
+        },
+        "signature": "H27r7UxUb8BozjEvV0v++nCyRI7S6yyroeKCJQpgU5NO3CP6FpXWs5kCxy8vhmMhbtpj/FMj+8s3+updw7g+bmE="
+    },
+    "txid": "fc9220025df5f2bf76fcda8f66bced4c95846e136ff3f5ff4c36fede3a5e3fc5",
+    "block": 1440095,
+    "publisher-name": "Imogen Heap"
+}

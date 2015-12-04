@@ -1,0 +1,131 @@
+.main {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    z-index: 1050;
+    margin-left: -169px;
+}
+
+.item.active:before {
+    display: none !important;
+}
+
+.overlay {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:rgba(230, 230, 230, 0.85);
+    background: url(data:;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAABl0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuNUmK/OAAAAATSURBVBhXY2RgYNgHxGAAYuwDAA78AjwwRoQYAAAAAElFTkSuQmCC) repeat scroll transparent\9; /* ie fallback png background image */
+    z-index:1000;
+}
+
+.container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.41);
+    -moz-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.41);
+    box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.41);
+    background-color: #f7f6f5;
+    width: 393px;
+    max-height: 100%;
+    padding: 25px;
+    margin: 20px;
+}
+
+.close {
+    font-family: 'mediaicns';
+    position: absolute;
+    right: 32px;
+    top: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    display: none
+}
+
+.close:before {
+    content: '\e803';
+}
+
+.suggest {
+    margin-bottom: 13px;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.pinPretext {
+    margin-bottom: 5px;
+}
+
+.payinfo,
+.qrcode {
+    -webkit-flex: 1;
+    flex: 1;
+    margin: 0px 5px;
+}
+
+.payinfo {
+	display: -webkit-flex;
+    display: flex;
+	-webkit-justify-content: space-around;
+    justify-content: space-around;
+	-webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+.paybox {
+    display: -webkit-flex;
+    display: flex;
+    text-align: center;
+}
+
+.paybox input {
+    width: 45px;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.footer {
+    text-align: center
+}
+
+.pinInfo {
+    font-size: 30px
+}
+
+.suggest {
+    margin-bottom: 13px;
+    margin-top: 10px;
+    display: inline-block;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0px auto;
+}
+
+.pinSuggest {
+    font-size: 30px;
+
+}
+
+.qrcode {
+    margin: 10px 5px;
+}
+
+.somespace {
+    height: 10px
+}
+
+.pinSuggestion {
+    text-align: center
+}
+
+.pinError {
+    margin-bottom: 13px;
+    display: none
+}

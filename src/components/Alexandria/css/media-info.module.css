@@ -1,13 +1,4 @@
-.main {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    -webkit-justify-content: space-around;
-    justify-content: space-around;
-}
-
-.media-info,
+.main,
 .cover {
     -webkit-flex: 1;
     flex: 1;
@@ -18,7 +9,7 @@
     height: 100%;
 }
 
-.media-cover img {
+.cover img {
     border-radius: 5px;
 }
 
@@ -31,4 +22,8 @@ h3 {
 .meta {
     position: relative;
     top: -15px;
+}
+
+.title {
+    cursor: pointer;
 }

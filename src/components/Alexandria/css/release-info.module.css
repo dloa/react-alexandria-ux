@@ -1,10 +1,26 @@
-* {
+.publisher {
+    display: none
+}
+
+.btcAddress {
+    display: none
+}
+
+.runtime {
+    display: none
+}
+
+.trackCount {
+    display: none
+}
+
+.xfileContainer {
+    display: none
+}
+
+.main {
     list-style: none;
     padding: 0;
+    font-size: 1.05em;
 }
 
-li {}
-
-.publisher, .btcAddress {
-    display: none;
-}

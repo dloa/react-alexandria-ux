@@ -2,6 +2,14 @@ import React from 'react';
 
 import styles from './css/playlist.module.css'
 
+var prettyTime = (t) => {
+    let h = Math.floor(t/3600)%24,
+        m = Math.floor(t/60)%60,
+        s = t%60;
+
+    return h?h+':':'' + m + ':' + s
+}
+
 export default class PlayList extends React.Component {
     static defaultProps = {
         author:'Imogen Heap',
@@ -12,12 +20,12 @@ export default class PlayList extends React.Component {
         tracks: [
             {
                 title: 'Tiny Human',
-                time: '3:39',
+                runtime: 394
             },
             {
                 title: 'Another Tiny Human',
                 author: 'another Himogen Heap',
-                time: '33:39',
+                runtime: 3339
             }
         ]
     }
@@ -45,9 +53,9 @@ export default class PlayList extends React.Component {
                                      <td>{i}</td>
                                      <td>{track.title}</td>
                                      <td>{track.author || this.props.author}</td>
-                                     <td>{track.time}</td>
-                                     <td>$<span className="price-play">{this.props.prices.play}</span></td>
-                                     <td>$<span className="price-download">{this.props.prices.dl}</span></td>
+                                     <td>{prettyTime(track.runtime)}</td>
+                                     <td><span className={styles.price}>$<span>{this.props.prices.play}</span></span></td>
+                                     <td><span className={styles.price}>$<span>{this.props.prices.dl}</span></span></td>
                                  </tr>
                              )
                          })}

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="66px"
+   height="66px"
+   viewBox="0 0 66 66"
+   version="1.1"
+   id="svg3408"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="play.svg">
+  <metadata
+     id="metadata3423">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>icons/paywall-play </dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="3200"
+     inkscape:window-height="1782"
+     id="namedview3421"
+     showgrid="false"
+     inkscape:zoom="22.878788"
+     inkscape:cx="33"
+     inkscape:cy="33"
+     inkscape:window-x="0"
+     inkscape:window-y="18"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3408" />
+  <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+  <title
+     id="title3410">icons/paywall-play </title>
+  <desc
+     id="desc3412">Created with Sketch.</desc>
+  <defs
+     id="defs3414" />
+  <g
+     id="Page-1"
+     stroke="none"
+     stroke-width="1"
+     fill="none"
+     fill-rule="evenodd"
+     sketch:type="MSPage">
+    <g
+       id="Desktop-HD-Copy"
+       sketch:type="MSArtboardGroup"
+       transform="translate(-385.000000, -291.000000)">
+      <g
+         id="icons/paywall-play-"
+         sketch:type="MSLayerGroup"
+         transform="translate(385.000000, 291.000000)">
+        <path
+           d="M33,66 C14.8,66 0,51.2 0,33 C0,14.8 14.8,0 33,0 C51.2,0 66,14.8 66,33 C66,51.2 51.2,66 33,66 L33,66 Z M33,2 C15.9,2 2,15.9 2,33 C2,50.1 15.9,64 33,64 C50.1,64 64,50.1 64,33 C64,15.9 50.1,2 33,2 L33,2 Z"
+           id="stream"
+           fill="#000000"
+           sketch:type="MSShapeGroup" />
+        <polygon
+           id="Triangle-2"
+           stroke="#000000"
+           stroke-width="2"
+           sketch:type="MSShapeGroup"
+           transform="translate(37.000000, 33.000000) rotate(90.000000) translate(-37.000000, -33.000000) "
+           points="37 19 51 47 23 47 " />
+      </g>
+    </g>
+  </g>
+  <path
+     style="fill:#a0a0a0;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="M 31.256026,63.935979 C 28.145188,63.700442 25.914553,63.275607 23.322914,62.425082 20.966496,61.65175 18.633128,60.551044 16.504371,59.208617 12.549197,56.714416 9.1240878,53.26645 6.6821062,49.320795 4.3891721,45.615966 2.9166526,41.560829 2.3253338,37.322781 2.0983781,35.696165 2.0613124,35.097904 2.0599491,33.039338 2.05869,31.138103 2.0817409,30.659438 2.2378093,29.34596 2.9912072,23.005335 5.6627772,17.114114 9.9581368,12.321457 10.623242,11.579349 11.918696,10.298763 12.644947,9.6654832 17.108405,5.7734159 22.491489,3.2720936 28.32755,2.3783508 31.090956,1.9551587 34.171,1.9164517 36.938146,2.2701411 48.97547,3.8087205 59.082125,12.344429 62.6315,23.969801 c 0.851977,2.790503 1.269132,5.443325 1.326521,8.435762 0.05907,3.079947 -0.285133,5.871 -1.083458,8.78543 -1.815104,6.626409 -5.807274,12.465241 -11.38145,16.646193 -2.520501,1.890519 -5.516534,3.470996 -8.507923,4.488122 -2.335408,0.79408 -4.559427,1.267401 -7.204588,1.533298 -0.640222,0.06436 -3.949153,0.120942 -4.524576,0.07737 z M 37.670265,40.814007 53.285117,33.006556 37.659313,25.190602 c -8.594191,-4.298775 -15.640555,-7.817045 -15.658585,-7.818378 -0.01803,-0.0013 -0.03278,7.0292 -0.03278,15.623405 0,10.393896 0.01464,15.625828 0.04373,15.625828 0.02405,0 7.070416,-3.513353 15.658585,-7.80745 z"
+     id="path3425"
+     inkscape:connector-curvature="0" />
+</svg>

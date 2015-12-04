@@ -96,3 +96,7 @@
     position: relative;
     content: ""
 }
+
+.buttonSVG {
+    cursor: pointer
+}

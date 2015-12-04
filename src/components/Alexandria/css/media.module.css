@@ -1,9 +1,44 @@
+h1 {
+    font-size: 1.65em;
+    margin-top: 0;
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    line-height: 1.65;
+}
+h1, h2, h3, h4 {
+    text-align: center;
+}
+h1 {
+    font-family: Avenir-Medium, avenir, 'Open Sans', open_sansregular, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    font-size: 2em;
+    margin: .67em 0;
+}
+
 .hidden {
     display: none;
 }
+
+.main {
+    background-color: #fff !important;
+    padding-top: 44px;
+    min-height: calc(100% - 44px);
+    box-shadow: inset 0px 5px 40px -8px rgba(0,0,0,0.75);
+    -webkit-box-shadow: inset 0px 5px 40px -8px rgba(0,0,0,0.5);
+    -moz-box-shadow: inset 0px 5px 40px -8px rgba(0,0,0,0.5);
+    box-shadow: inset 0px 5px 40px -8px rgba(0,0,0,0.5);
+}
 .container {
     width: 60%;
-    margin: 0px auto;
+    margin: 0px auto;    
 }
 
 .top {

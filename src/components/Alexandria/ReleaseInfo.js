@@ -14,7 +14,7 @@ export default class ReleaseInfo extends React.Component {
 
     render() {
         return (
-            <ul className="release-info">
+            <ul className={styles.main}>
                 <li className={styles.publisher}>{this.props.publisher}</li>
                 <li className={styles.btcAddress}>{this.props.btcAddress}</li>
                 <li>Published <span className={styles.date}>{this.props.published.toString()}</span></li>

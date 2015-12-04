@@ -76,11 +76,24 @@
     /* forth column: Time */
 }
 
-.table span.price
+
 /* fifth column: Price/Play */
-{
+.price span {
     padding: 0 20px;
     border-radius: 4px;
     background: lightgrey;
     font-weight: bold;
+}
+
+
+.price {
+    margin-top: 7px;
+}
+
+.table thead {
+    color: #7c7c7c !important;
+}
+
+.table {
+    margin-top: 15px
 }
