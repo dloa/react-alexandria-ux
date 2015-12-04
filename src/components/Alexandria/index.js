@@ -66,7 +66,7 @@ export class Alexandria extends React.Component {
     render() {
         let {state, actions} = this.props;
         let xinfo = this.props['extra-info'];
-        console.log (this.props, this.state)
+
         return (
             <div className={styles.main}>
                 {state.PWYW.shown?
