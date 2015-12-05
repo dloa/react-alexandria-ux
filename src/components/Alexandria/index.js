@@ -83,13 +83,8 @@ class StoreModel {
     }
 
     onShowPWYW(type) {
-        console.log ('show', type)
-        this.setState({
-            PWYW: {
-                shown: true,
-                type: type
-            }
-        })
+        this.state.PWYW.shown = true;
+        this.state.PWYW.type  = type;
     }
 
     onHidePWYW() {
