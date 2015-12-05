@@ -64,32 +64,16 @@ class StoreModel {
                 shown: false,
                 type: null
             },
+            tracks: [],
             cover: null,
-            price: null
+            price: null,
         };
 
         this.registerAsync(AlexandriaSource);
     }
 
-    onRecievedTXID(e) {
-        let media = e['media-data']['alexandria-media'];
-        let info = media.info;
-        let xinfo= info['extra-info'];
-        let formats = Object.keys(xinfo.element1).filter(k => (k !== 'name'));
-
-        console.log (media);
-        this.setState({
-            mediaInfo: {
-                title: info.title,
-                artist: xinfo.artist,
-            },
-            price: info.price,
-            formats: {
-                options: formats,
-                selected: formats[0]
-            },
-            data: info
-        });
+    onRecievedTXID(state) {
+        this.setState(state)
     }
 
     onLoadingTXID(e) {
