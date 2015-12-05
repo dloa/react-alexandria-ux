@@ -24,7 +24,7 @@ const AlexandriaSource = {
     fetchTXID: {
         // remotely fetch something (required)
         remote(state, txid) {
-            return TXIDSearch(state.server, txid)
+            return TXIDSearch(state.servers.libraryd, txid)
         },
 
         local(state, txid) {
@@ -46,7 +46,10 @@ class StoreModel {
         Object.keys(Actions).map(k => this.bindActions(Actions[k]));
 
         this.state = {
-            server: 'libraryd.alexandria.media',
+            servers: {
+                libraryd: 'libraryd.alexandria.media',
+                ipfs: 'ipfs.alexandria.media'
+            },
             results: {},
             data: null,
             mediaInfo: {
