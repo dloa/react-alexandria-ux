@@ -50,7 +50,7 @@ export default class PlayList extends React.Component {
                         {this.props.tracks.map((track, i) => {
                              return (
                                  <tr key={i}>
-                                     <td>{i}</td>
+                                     <td>{i + 1}</td>
                                      <td>{track.title}</td>
                                      <td>{track.author || this.props.author}</td>
                                      <td>{prettyTime(track.runtime)}</td>
