@@ -10,6 +10,12 @@ var prettyTime = (t) => {
     return h?h+':':'' + m + ':' + s
 }
 
+var Price = ({price}) => (
+    <span className={styles.price}>$<span className={styles.price}>
+        {price}
+    </span></span>
+)
+
 export default class PlayList extends React.Component {
     static defaultProps = {
         author:'Imogen Heap',
@@ -32,7 +38,9 @@ export default class PlayList extends React.Component {
 
     render() {
         console.log (this.props);
-        if (! this.props.tracks) return (<p>No Tracks to show</p>)
+        let {tracks, prices, ...other} = this.props;
+        if (!tracks) return (<p>No Tracks to show</p>)
+
         return (
             <div className={styles.main}>
                 <table className={styles.table}>
@@ -47,15 +55,15 @@ export default class PlayList extends React.Component {
                         </tr>
                     </thead>
                     <tbody className={styles.tracks}>
-                        {this.props.tracks.map((track, i) => {
+                        {tracks.map((track, i) => {
                              return (
                                  <tr key={i}>
                                      <td>{i + 1}</td>
                                      <td>{track.title}</td>
                                      <td>{track.author || this.props.author}</td>
                                      <td>{prettyTime(track.runtime)}</td>
-                                     <td><span className={styles.price}>$<span>{this.props.prices.play}</span></span></td>
-                                     <td><span className={styles.price}>$<span>{this.props.prices.dl}</span></span></td>
+                                     <td><Price price={prices.play} /></td>
+                                     <td><Price price={prices.dl} /></td>
                                  </tr>
                              )
                          })}
