@@ -131,22 +131,23 @@ export class Alexandria extends React.Component {
         let {state, PWYWActions} = this.props;
         console.log (this.props, this.state)
 
-        return (
-            <div className={styles.main}>
-                {state.PWYW.shown?
-                 <PWYW {...state.PWYW} actions={PWYWActions} />:null
-                }
-                <div className={styles.container}>
-                    <div className={styles.top}>
-                        <InfoBox {...this.props} data={state.data}/>
-                        <AlbumCover {...state.cover}/>
-                    </div>
-                    <div className={styles.bottom}>
-                        <PlayList tracks={state.tracks} author={state.mediaInfo.artist}/>
-                    </div>
+            return (
+                <div className={styles.main}>
+                    {state.PWYW.shown?
+                     <PWYW {...state.PWYW} btcusd={state.btcusd}
+                                           actions={PWYWActions} />:null
+                    }
+                     <div className={styles.container}>
+                         <div className={styles.top}>
+                             <InfoBox {...this.props} />
+                             <AlbumCover {...state.cover}/>
+                         </div>
+                         <div className={styles.bottom}>
+                             <PlayList tracks={state.tracks} author={state.mediaInfo.artist}/>
+                         </div>
+                     </div>
                 </div>
-            </div>
-        )
+            )
     }
 }
 
