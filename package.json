@@ -55,6 +55,7 @@
   },
   "dependencies": {
     "alt-container": "^1.0.0",
+    "axios": "^0.7.0",
     "react": "^0.14.0",
     "react-dom": "^0.14.0"
   }

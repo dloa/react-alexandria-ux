@@ -66,7 +66,7 @@ export default class PWYW extends React.Component {
     render() {
         let {type, prices, ...other} = this.props;
         let {actions} = this.props;
-        
+
         return (
             <div className={styles.overlay} onClick={actions.hidePWYW}>
                 <div className={styles.main}>

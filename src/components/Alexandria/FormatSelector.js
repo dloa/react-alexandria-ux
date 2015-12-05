@@ -6,27 +6,18 @@ export default class FormatSelector extends React.Component {
         options: ['mp3', 'flac', 'WARNING YOU ARE USING DEFAULT PROPS'],
     }
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            selected: props.selected || props.options[0]
-        }
-    }
-
     render() {
-        let selected = this.state.selected;
-
-        console.log ('formatselector', this.props)
+        let {options, selected, actions} = this.props;
+        console.log ('formatselector', options, selected, actions);
         return (
             <div className={styles.main}>
-                {this.props.options.map((o, i) => {
-                     return (
-                         <button key={i} className={selected === o ? styles.active : ''}>
-                             {o}
-                         </button>
-                     )
-                 })}
+                {options.map((o, i) => (
+                     <button key={i}
+                             className={selected === o ? styles.active : ''}
+                             onClick={e => actions.setFormat(o)}>
+                         {o}
+                     </button>
+                 ))}
             </div>
         )
     }
