@@ -133,7 +133,6 @@ export class Alexandria extends React.Component {
     render() {
         let {state, PWYWActions} = this.props;
         console.log (this.props, this.state)
-        let xinfo = state.data['extra-info'];
 
         return (
             <div className={styles.main}>
@@ -143,10 +142,10 @@ export class Alexandria extends React.Component {
                 <div className={styles.container}>
                     <div className={styles.top}>
                         <InfoBox {...this.props} data={state.data}/>
-                        <AlbumCover {...xinfo}/>
+                        <AlbumCover {...state.cover}/>
                     </div>
                     <div className={styles.bottom}>
-                        <PlayList tracks={xinfo.elements} author={xinfo.author}/>
+                        <PlayList tracks={state.tracks} author={state.mediaInfo.artist}/>
                     </div>
                 </div>
             </div>
