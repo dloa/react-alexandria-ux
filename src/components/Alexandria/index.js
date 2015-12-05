@@ -62,11 +62,11 @@ class StoreModel {
             },
             PWYW: {
                 shown: false,
-                type: null
+                type: 'pin'
             },
             tracks: [],
             cover: null,
-            price: null,
+            prices: {},
         };
 
         this.registerAsync(AlexandriaSource);

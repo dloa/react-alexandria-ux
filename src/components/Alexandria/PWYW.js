@@ -14,7 +14,7 @@ var PWYWPin = ({pinning, price, onClick}) => (
             if you pin it, you can play the song for free!
         </div>
         <span className={styles.suggest} style={{fontSize: 30}}>
-            $<span>{price}</span> per play
+            $<span>{price.suggested}</span> per play
         </span>
         <span className={styles.pinError}></span>
         <button onClick={onClick}>Pin It!</button>
@@ -31,35 +31,64 @@ PWYWQRCode.defaultProps = {
     size: {h: 300, w:300}
 };
 
-var PWYWPayBTC = ({price, address, type, onClick}) => (
-    <div className={styles.container}>
-        <div className={styles.paybox}>
-            <div className={styles.payinfo}>
-                The suggested price is:
-                <span className={styles.suggest}>
-                    $<span>{price}</span> to {type}
-                </span>
-                <br />
-                <span>
-                    $<input maxLength="4" /> USD
-                </span>
-                <div className={styles.somespace}></div>
+class PWYWPayBTC extends React.Component {
+    constructor(props) {
+        super(props);
+
+        console.log ('paybtc', props)
+        this.state = {
+            price: props.price.suggested
+        }
+
+        this.onChange = e => {
+            this.setState({
+                price: e.target.value / this.props.btcusd
+            })
+        }
+    }
+
+    render() {
+        let {price, address, type, onClick} = this.props;
+        console.log (this.props)
+        return (
+            <div className={styles.container}>
+                <div className={styles.paybox}>
+                    <div className={styles.payinfo}>
+                        The suggested price is:
+                        <span className={styles.suggest}>
+                            $<span>{price.suggested}</span> to {type}
+                        </span>
+                        <br />
+                        <span>
+                            $<input maxLength="4"
+                                    onChange={this.onChange}/> USD
+                        </span>
+                        <div className={styles.somespace}></div>
+                    </div>
+                </div>
+                <div className={styles.footer}>
+                    <span>{this.state.price}</span> BTC to<br />
+                    <PWYWQRCode address={address} price={this.state.price}
+                                size={{h: 300, w: 300}} />
+                    <span>{address}</span>
+                </div>
             </div>
-        </div>
-        <div className={styles.footer}>
-            <span>{price}</span> BTC to<br />
-            <PWYWQRCode address={address} price={price} size={{h: 300, w: 300}} />
-            <span>{address}</span>
-        </div>
-    </div>
-);
+        )
+    }
+}
 
 export default class PWYW extends React.Component {
     static defaultProps = {
         type: 'pin',
         prices: {
-            buy: 1,
-            play: 0.0125
+            play: {
+                suggested: 0.0125,
+                min: 0.0001
+            },
+            buy: {
+                suggested: 1,
+                min: 0.01
+            }
         },
         address: '1DefaultPropBTCAddressW298xk0'
     }

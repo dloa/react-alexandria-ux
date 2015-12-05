@@ -12,7 +12,7 @@ var PWIWItem = ({type, prices, actions, children}) => (
         onClick={e => actions.showPWYW(type)}>
         <img className={styles.buttonSVG} src={imgs[type]} />
         <span className="price">
-            {prices[type]?(<span>${prices[type]}</span>):null}
+            {prices[type]?(<span>${prices[type].suggested}</span>):null}
             {children}
         </span>
     </li>
@@ -21,8 +21,14 @@ var PWIWItem = ({type, prices, actions, children}) => (
 export default class BuyBox extends React.Component {
     static defaultProps = {
         prices: {
-            play: 0.0125,
-            buy: 1
+            play: {
+                suggested: 0.0125,
+                min: 0.0001
+            },
+            buy: {
+                suggested: 1,
+                min: 0.01
+            }
         }
     }
 
