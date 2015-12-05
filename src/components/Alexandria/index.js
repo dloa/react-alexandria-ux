@@ -51,7 +51,6 @@ class StoreModel {
                 ipfs: 'ipfs.alexandria.media'
             },
             results: {},
-            data: null,
             mediaInfo: {
                 artist: null,
                 title: null,
@@ -113,8 +112,6 @@ export default class Component extends React.Component {
         super(props);
 
         Store.fetchTXID(props.txid);
-//        console.error ('test data', testData)
-//        this.state = testData['media-data']['alexandria-media']['info']
     }
 
     render() {
