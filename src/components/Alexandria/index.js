@@ -129,8 +129,7 @@ export class Alexandria extends React.Component {
             return (
                 <div className={styles.main}>
                     {state.PWYW.shown?
-                     <PWYW {...state.PWYW} btcusd={state.btcusd}
-                                           actions={PWYWActions} />:null
+                     <PWYW {...state.PWYW} actions={PWYWActions} />:null
                     }
                      <div className={styles.container}>
                          <div className={styles.top}>

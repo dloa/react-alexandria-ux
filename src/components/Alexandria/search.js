@@ -76,15 +76,20 @@ export default (librarydHost, term) => (
 
             console.log (media);
             return ({
-                btcusd: btcusd.data['24h_avg'],
                 mediaInfo: {
                     title: info.title,
-                    artist: xinfo.artist,
+                    artist: xinfo.artist
                 },
                 prices: getPrices(xinfo.pwyw),
                 formats: {
                     options: formats,
                     selected: formats[0]
+                },
+                PWYW: {
+                    shown: false,
+                    type: 'pin',
+                    btcusd: btcusd.data['24h_avg'],
+                    address: xinfo['Bitcoin Address']
                 },
                 tracks: fixDataMess(xinfo),
                 data: info
