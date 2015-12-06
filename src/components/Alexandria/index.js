@@ -106,7 +106,11 @@ export default class Component extends React.Component {
     constructor(props) {
         super(props);
 
-        Store.fetchTXID(props.txid);
+        this.state = {
+            txid: location.hash?location.hash.replace('#', ''):this.props.txid
+        }
+
+        Store.fetchTXID(this.state.txid);
     }
 
     render() {
