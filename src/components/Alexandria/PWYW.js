@@ -23,9 +23,10 @@ var PWYWPin = ({pinning, price, onClick}) => (
 
 var PWYWQRCode = ({address, price, size}) => (
     <div className={styles.qrcode}>
-        <img src={'http://api.qrserver.com/v1/create-qr-code/?size=' + size.w + 'x' + size.h + '&data=bitcoin:' + address + '?amount=' + price} />
-    </div>
-);
+        {address?
+         <img src={'http://api.qrserver.com/v1/create-qr-code/?size=' + size.w + 'x' + size.h + '&data=bitcoin:' + address + '?amount=' + price} />:
+         <img src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==' />}
+    </div>);
 
 PWYWQRCode.defaultProps = {
     size: {h: 300, w:300}
