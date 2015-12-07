@@ -61,8 +61,8 @@ class PWYWPayBTC extends React.Component {
                         </span>
                         <br />
                         <span>
-                            $<input maxLength="4"
-                                    onChange={this.onChange}/> USD
+                            $<input maxLength="4" 
+                                    onChange={this.onChange}/> USD 
                         </span>
                         <div className={styles.somespace}></div>
                     </div>

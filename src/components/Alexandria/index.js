@@ -3,10 +3,10 @@ import AltContainer from 'alt-container';
 
 import styles from './css/media.module.css';
 
-import InfoBox from './InfoBox';
-import AlbumCover from './AlbumCover';
-import PlayList from './PlayList';
-import PWYW from './PWYW';
+import InfoBox from './components/InfoBox';
+import AlbumCover from './components/AlbumCover';
+import PlayList from './components/PlayList';
+import PWYW from './components/PWYW';
 
 import testData from './tests/data.json';
 
