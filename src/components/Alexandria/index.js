@@ -13,7 +13,7 @@ import testData from './tests/data.json';
 import alt from './alt';
 import utils from './utils';
 
-import Store, {MainActions as Actions} from './stores/LibrarydStore';
+import Store, {Actions} from './stores/LibrarydStore';
 
 export default class Component extends React.Component {
     static defaultProps = {

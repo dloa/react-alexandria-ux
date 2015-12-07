@@ -4,21 +4,21 @@ import utils from '../utils';
 import TXIDSearch from '../sources/TXID';
 import {BTCAverageSource} from '../sources/BitCoinAverage';
 
-export const MainActions = {
+export const Actions = {
     PWYWActions: alt.generateActions('showPWYW', 'hidePWYW'),
     TXIDActions: utils.generateSourceActions('TXID'),
     FormatActions: alt.generateActions('setFormat')
 }
 
 const AlexandriaSource = utils.simpleCachingSource(
-    'TXID', MainActions.TXIDActions, (state, txid) => {
+    'TXID', Actions.TXIDActions, (state, txid) => {
         return TXIDSearch(state.servers.libraryd, txid)
     }
 )
 
 class StoreModel {
     constructor() {
-        Object.keys(MainActions).map(k => this.bindActions(MainActions[k]));
+        Object.keys(Actions).map(k => this.bindActions(Actions[k]));
         this.registerAsync(AlexandriaSource);
         this.registerAsync(BTCAverageSource);
 
