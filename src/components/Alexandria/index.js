@@ -28,6 +28,7 @@ export default class Component extends React.Component {
             txid: location.hash?location.hash.replace('#', ''):this.props.txid
         }
 
+        location.hash = this.state.txid;
         Store.fetchTXID(this.state.txid);
         Store.fetchBTCAverage();
     }
