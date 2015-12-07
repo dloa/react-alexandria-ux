@@ -30,7 +30,6 @@ export default class Component extends React.Component {
 
         location.hash = this.state.txid;
         Store.fetchTXID(this.state.txid);
-        Store.fetchBTCAverage();
     }
 
     render() {
