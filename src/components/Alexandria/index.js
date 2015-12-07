@@ -14,6 +14,7 @@ import alt from './alt';
 import utils from './utils';
 
 import Store, {Actions} from './stores/LibrarydStore';
+import BTCStore, {Actions as BTCActions} from './stores/LibrarydStore';
 
 export default class Component extends React.Component {
     static defaultProps = {
@@ -28,6 +29,7 @@ export default class Component extends React.Component {
         }
 
         Store.fetchTXID(this.state.txid);
+        Store.fetchBTCAverage();
     }
 
     render() {
