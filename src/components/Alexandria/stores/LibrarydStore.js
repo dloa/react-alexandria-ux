@@ -2,7 +2,6 @@ import alt from '../alt';
 import utils from '../utils';
 
 import TXIDSearch from '../sources/TXID';
-import {BTCAverageSource, BTCAverageActions} from '../sources/BitCoinAverage';
 
 export const Actions = {
     PWYWActions: alt.generateActions('showPWYW', 'hidePWYW'),
@@ -20,9 +19,6 @@ class StoreModel {
     constructor() {
         Object.keys(Actions).map(k => this.bindActions(Actions[k]));
         this.registerAsync(AlexandriaSource);
-
-        this.bindActions(BTCAverageActions);
-        this.registerAsync(BTCAverageSource);
 
         this.state = {
             servers: {
@@ -60,14 +56,6 @@ class StoreModel {
 
     onTXIDFailed(e) {
         this.state.failed = 'Could not get TX object from TXID';
-    }
-
-    onBTCAverageSuccess(avg) {
-        this.state.PWYW.btcusd = avg;
-    }
-
-    onBTCAverageFailed(e) {
-        console.error ('avgbtc', e)
     }
 
     onShowPWYW(type) {

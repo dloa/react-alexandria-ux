@@ -1,45 +1,46 @@
-import alt from './alt';
 import axios from 'axios';
 
-export const Actions = alt.generateActions('payToAddress', 'AddressLoading', 'AddressCreated', 'AdressError', 'CheckingPayment', 'PaymentDone');
+import alt from '../alt';
+import utils from '../utils';
 
-const PaymentSource = {
-    payToAddress: {
-        remote(state, address) {
+import {BTCAverageSource, BTCAverageActions} from '../sources/BitCoinAverage';
+
+export const Actions = {
+    PaymentAddress: utils.generateSourceActions('PaymentAddress', ['payToAddress']),
+    CheckPayment: utils.generateSourceActions('CheckPayment')
+}
+
+export const PaymentAddressSource = utils.simpleCachingSource(
+    'PaymentAddress', Actions.PaymentAddress, (state, address) => {
             return axios.get('https://blockchain.info/api/receive', {
                 params: {
                     method: 'create',
                     address: address
                 }
             }).then(res => (res.data.input_address))
-        },
+        }
+)
 
-        loading: Actions.AddressLoading,
-        success: Actions.AddressCreated,
-        error:   Actions.AddressError
+export const CheckPaymentSource = utils.simpleCachingSource (
+    'CheckPayment', Actions.CheckPayment, (state, address, amount) => {
+        return axios.get('https://blockchain.info/q/getreceivedbyaddress/' + address)
+            .then(res => (res.data))
+            .then(paidAmount => {
+                if (paidAmount < amount)
+                    throw new Error ('not paid')
+                return paidAmount
+            })
     }
-};
-
-const PaymentDoneSource = {
-    checkPaymentDone: {
-        remote(state, address, amount) {
-            return axios.get('https://blockchain.info/q/getreceivedbyaddress/' + address)
-                .then(res => (res.data))
-                .then(paidAmount => {
-                    if (paidAmount < amount)
-                        throw new Error ('not paid')
-                    return paidAmount
-                })
-        },
-
-        loading: Actions.CheckingPayment,
-        success: Actions.PaymentDone,
-    }
-};
+);
 
 class StoreModel {
     constructor() {
-        this.bindActions(Actions)
+        Object.keys(Actions).map(k => this.bindActions(Actions[k]));
+        this.registerAsync(PaymentAddressSource);
+        this.registerAsync(CheckPaymentSource);
+
+        this.bindActions(BTCAverageActions);
+        this.registerAsync(BTCAverageSource);
 
         this.state = {
             address: null,
@@ -48,33 +49,45 @@ class StoreModel {
             required: 0
         }
 
-        this.registerAsync(PaymentSource);
-        this.registerAsync(PaymentDoneSource);
     }
 
     onPayToAddress(address) {
+        console.log ('getting new address')
         this.getInstance().payToAddress(address)
     }
 
-    onAddressCreated(address) {
+    onPaymentAddressSuccess(address) {
         this.state.address = address;
         this.getInstance().checkPaymentDone(address, this.state.required)
     }
 
-    onAddressLoading(e) {
+    onPaymentAddressLoading(e) {
         console.error('loading Address', e)
     }
-    onAddressError(e) {
+    onPaymentAddressError(e) {
         console.error('failed Address', e)
     }
-    onCheckingPayment(required) {
+    onCheckPaymentLoading(required) {
         this.state.required = required
     }
 
-    onPaymentDone(amount) {
+    onCheckPaymentSucess(amount) {
         console.log ('payment done', amount);
         this.state.paid = amount
     }
+
+    onCheckPaymentError(e) {
+        console.error ('couldn\'t check payment', e)
+    }
+
+    onBTCAverageSuccess(avg) {
+        this.state.btcusd = avg;
+    }
+
+    onBTCAverageFailed(e) {
+        console.error ('avgbtc', e)
+    }
+
 }
 
 export default alt.createStore(StoreModel);
