@@ -1,7 +1,7 @@
 import alt from './alt';
 import axios from 'axios';
 
-const Actions = alt.generateActions('payToAddress', 'AddressLoading', 'AddressCreated', 'AdressError', 'CheckingPayment', 'PaymentDone');
+export const Actions = alt.generateActions('payToAddress', 'AddressLoading', 'AddressCreated', 'AdressError', 'CheckingPayment', 'PaymentDone');
 
 const PaymentSource = {
     payToAddress: {
