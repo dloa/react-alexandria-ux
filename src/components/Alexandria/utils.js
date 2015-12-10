@@ -11,7 +11,7 @@ export default {
 
         source[n] = {
             local(state, id) {
-                return state.results[id] ? state.results : null;
+                return state.results ? (state.results[id] ? state.results : null) : null;
             },
 
             loading: Actions[name + 'Loading'],
