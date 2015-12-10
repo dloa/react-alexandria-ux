@@ -68,7 +68,7 @@ export class Alexandria extends React.Component {
                      <div className={styles.container}>
                          <div className={styles.top}>
                              <InfoBox {...this.props} />
-                             <AlbumCover {...state.cover}/>
+                             <AlbumCover {...state}/>
                          </div>
                          <div className={styles.bottom}>
                              <PlayList tracks={state.tracks} author={state.mediaInfo.artist}/>

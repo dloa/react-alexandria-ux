@@ -87,6 +87,10 @@ export default (librarydHost, term) => (
                 address: xinfo['Bitcoin Address']
             },
             tracks: fixDataMess(xinfo),
+            ipfs:{
+                root: xinfo['DHT Hash'],
+            },
+            cover: xinfo.coverArt,
             data: info
         });
     })

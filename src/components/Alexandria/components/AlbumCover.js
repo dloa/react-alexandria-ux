@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './css/media-info.module.css';
 
-var AlbumCover = ({src}) => (
+var AlbumCover = ({cover, servers, ipfs, src}) => (
     <div className={styles.cover}>
-        <img src={src} />
+        <img src={cover?`http://${servers.ipfs}/ipfs/${ipfs.root}/${cover}`:src} />
     </div>
 );
 
