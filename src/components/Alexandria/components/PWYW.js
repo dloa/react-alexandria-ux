@@ -43,7 +43,7 @@ class PWYWPayBTC extends React.Component {
 
         this.onChange = e => {
             this.setState({
-                price: e.target.value / this.props.btcusd
+                price: e.target.value / this.props.btc.btcusd
             })
         }
     }

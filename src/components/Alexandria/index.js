@@ -14,7 +14,7 @@ import alt from './alt';
 import utils from './utils';
 
 import Store, {Actions} from './stores/LibrarydStore';
-import BTCStore, {Actions as BTCActions} from './stores/LibrarydStore';
+import BTCStore, {Actions as BTCActions} from './stores/BitcoinStore';
 
 export default class Component extends React.Component {
     static defaultProps = {
@@ -30,27 +30,31 @@ export default class Component extends React.Component {
 
         location.hash = this.state.txid;
         Store.fetchTXID(this.state.txid);
+        BTCStore.fetchBTCAverage();
     }
 
     render() {
+
         return (
-                <AltContainer stores={{state: Store}} actions={Actions}
-                render={props => {
-                        if (Store.isLoading()) {
-                            return <p>Loading Please Wait...</p>
-                        }
+            <AltContainer stores={{state: Store, btc: BTCStore}}
+                          actions={Actions}
+                          render={props => {
+                                  if (Store.isLoading()) {
+                                      return <p>Loading Please Wait...</p>
+                                  }
 
-                        if (props.state.failed){
-                            return (
-                                <div>
-                                    <h1>txid: {this.state.txid}</h1>
-                       {props.state.failed}
-                                </div>
-                            )
-                        }
+                                  if (props.state.failed){
+                                      return (
+                                          <div>
+                                              <h1>txid: {this.state.txid}</h1>
+                                 {props.state.failed}
+                                          </div>
+                                      )
+                                  }
 
-                        return <Alexandria {...props}/>
-                                  }}/>
+                                  return <Alexandria {...props}/>
+                              }}
+            />
         )
     }
 }
